@@ -19,10 +19,9 @@ function createElements(data) {
   }
 }
 
-function loadWonders(index, data) {
-  const wonder = data[index];
-  //console.log(typeof wonder); //object
-  localStorage.setItem("data", JSON.stringify(wonder));
-  //console.log(data[index]);
-   window.location.href = `./details.html`;
+function createWonder(data) {
+  let h2 = document.createElement("h2");
+  h2.innerText = data.name;
+  console.log(data);
+  document.getElementById("wonder").appendChild(h2);
 }

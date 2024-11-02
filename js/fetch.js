@@ -24,4 +24,4 @@ data();
 // console.log(fetchedData[0].name);
 // console.log(fetchedData[0].links.images[0]);
 
-//createElements(fetchedWonders);
+

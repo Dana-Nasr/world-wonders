@@ -1,1 +1,4 @@
-let wondersDiv = document.getElementById("wonders");
+
+function loadWonders() {
+  console.log("hello");
+}

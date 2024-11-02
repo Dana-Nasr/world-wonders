@@ -16,7 +16,7 @@ const fetchWorldWonders = async () => {
       img.setAttribute("src", fetchedData[wonder].links.images[0]);
       document.getElementById("wonders").appendChild(img);
       
-      console.log(wonder);
+      //console.log(wonder);
       let h2 = document.createElement("h2");
       h2.innerText = fetchedData[wonder].name;
       document.getElementById("wonders").appendChild(h2);
@@ -25,6 +25,7 @@ const fetchWorldWonders = async () => {
       btn.innerText = "view more";
       btn.setAttribute("id", wonder);
       document.getElementById("wonders").appendChild(btn);
+      btn.addEventListener("click", loadWonders);
     }
   } catch (error) {
     console.log(error);

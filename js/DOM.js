@@ -6,7 +6,7 @@ function createImage(image, id) {
 function loadImages(data) {
   const images = data.links.images;
   const size = images.length;
-  for (let i = 1; i < size; i++) {
+  for (let i = 0; i < size; i++) {
     createImage(images[i], "images");
   }
 }
@@ -57,11 +57,11 @@ function createWonder(data) {
   // console.log(data.links.google_maps);
 
   name.innerHTML = `Name: ${data.name}`;
-  createImage(data.links.images[0], "img");
-  summary.innerHTML = `Summary: ${data.summary}`;
+  // createImage(data.links.images[0], "img");
+  summary.innerHTML = ` ${data.summary}`;
   year.innerHTML = `Year: ${data.build_year}`;
   period.innerHTML = `Period of Time: ${data.time_period}`;
-
+  location.innerHTML = `Location: ${data.location}`;
   if (data.links.google_maps != null) {
     map.setAttribute("href", `${data.links.google_maps}`);
   }

@@ -4,29 +4,34 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="./styles/details.css" />
+    <link rel="stylesheet" href="./styles/main.css" />
+    <link rel="stylesheet" href="./styles/base/utilities.css" />
   </head>
   <body>
-    <div id="wonder">
-      <div id="details">
-        <h2 id="name"></h2>
-        <!-- image -->
-        <div id="img"></div>
-        <h6 id="summary"></h6>
-        <h6 id="location"></h6>
-        <h6><a id="map">click here to view on maps</a></h6>
-        <h6 id="year"></h6>
-        <h6 id="period"></h6>
-        <h6><a id="advisor">click here to view your advisor</a></h6>
-        <!-- add <a> tags -->
-        <h6 id="more">
-          Learn more<a id="britannica"> britannica</a
-          ><a id="wiki"> wikipedia</a>
-        </h6>
+    <!-- <div id="images" class="divImage scroll-container"></div> -->
+    <div id="wonder" class="wonder flex row wrap">
+      <div class="flex column grow1 image">
+        <div id="images" class="divImage scroll-container"></div>
+        <h4>Summary:</h4>
+        <p id="summary" class="summary"></p>
       </div>
 
-      <div id="images"></div>
+      <div id="details" class="details flex column space-between wrap grow1">
+        <h4 id="name"></h4>
+        <h4 id="location"></h4>
+        <h4><a id="map">click here to view on maps</a></h4>
+        <h4 id="year"></h4>
+        <h4 id="period"></h4>
+        <h4><a id="advisor">click here to view your advisor</a></h4>
+        <!-- add <a> tags -->
+        <h4 id="more" class="more">
+          Learn more<a id="britannica"> britannica</a
+          ><a id="wiki"> wikipedia</a>
+        </h4>
+      </div>
     </div>
-
+    <!-- <div id="images" class="divImage scroll-container"></div> -->
     <script src="./js/passWonders.js"></script>
     <script src="./js/DOM.js"></script>
     <script src="./js/wonder.js"></script>

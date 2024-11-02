@@ -7,9 +7,8 @@
 .divImg {
   width: 250px;
   height: 200px;
-  border: 1px solid black;
+  border: 1px solid #060948;
   border-radius: 20px;
-
 }
 .wonders {
   background-color: #ead8b1;
@@ -28,7 +27,7 @@ img {
   padding: 10px;
   border-radius: 10px;
   margin: 10px;
-    color: #060948;
+  color: #060948;
 }
 .btn {
   border-radius: 10px;

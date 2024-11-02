@@ -5,31 +5,23 @@ const instance = axios.create({
 const fetchWorldWonders = async () => {
   try {
     const response = await instance.get("/v0/wonders");
-
     const fetchedData = response.data;
-    // console.log(typeof response.data);
-    // console.log(fetchedData[0].name);
-    // console.log(fetchedData[0].links.images[0]);
-
-    for (let wonder in fetchedData) {
-      let img = document.createElement("img");
-      img.setAttribute("src", fetchedData[wonder].links.images[0]);
-      document.getElementById("wonders").appendChild(img);
-      
-      //console.log(wonder);
-      let h2 = document.createElement("h2");
-      h2.innerText = fetchedData[wonder].name;
-      document.getElementById("wonders").appendChild(h2);
-
-      let btn = document.createElement("button");
-      btn.innerText = "view more";
-      btn.setAttribute("id", wonder);
-      document.getElementById("wonders").appendChild(btn);
-      btn.addEventListener("click", loadWonders);
-    }
+    return fetchedData;
   } catch (error) {
     console.log(error);
   }
 };
 
-fetchWorldWonders();
+
+async function data() {
+  const fetchedWonders = await fetchWorldWonders();
+  createElements(fetchedWonders);
+}
+
+data();
+
+// console.log(typeof response.data);
+// console.log(fetchedData[0].name);
+// console.log(fetchedData[0].links.images[0]);
+
+//createElements(fetchedWonders);

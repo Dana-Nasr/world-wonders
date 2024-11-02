@@ -20,6 +20,9 @@ function createElements(data) {
 }
 
 function loadWonders(index, data) {
-  window.location.href = "./details.html";
+  const wonder = data[index];
+  //console.log(typeof wonder); //object
+  localStorage.setItem("data", JSON.stringify(wonder));
   console.log(data[index]);
+  window.location.href = `./details.html`;
 }

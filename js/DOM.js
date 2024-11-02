@@ -14,12 +14,12 @@ function createElements(data) {
     btn.setAttribute("id", wonder);
     document.getElementById("wonders").appendChild(btn);
     btn.addEventListener("click", function () {
-      loadWonders(wonder);
+      loadWonders(wonder, data);
     });
   }
 }
 
-function loadWonders(index) {
-  //window.location.href = "./details.html";
-  console.log(fetchedData[index]);
+function loadWonders(index, data) {
+  window.location.href = "./details.html";
+  console.log(data[index]);
 }

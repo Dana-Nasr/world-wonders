@@ -13,17 +13,29 @@ function loadImages(data) {
 //elements of index.html
 function createElements(data) {
   for (let wonder in data) {
-    createImage(data[wonder].links.images[0], "wonders");
+    //card
+    let card = document.createElement("div");
+    card.setAttribute("class", "card");
+    card.setAttribute("id", `card${wonder}`);
+    document.getElementById("wonders").appendChild(card);
+    
+    //image div
+    let imgDiv = document.createElement("div");
+    imgDiv.setAttribute("class", "divImg");
+    imgDiv.setAttribute("id", `imgDiv${wonder}`);
+    document.getElementById(`card${wonder}`).appendChild(imgDiv);
+    createImage(data[wonder].links.images[0], `imgDiv${wonder}`);
 
-    console.log(wonder);
+    //name
     let h2 = document.createElement("h2");
     h2.innerText = data[wonder].name;
-    document.getElementById("wonders").appendChild(h2);
+    document.getElementById(`card${wonder}`).appendChild(h2);
 
+    //button
     let btn = document.createElement("button");
     btn.innerText = "view more";
     btn.setAttribute("id", wonder);
-    document.getElementById("wonders").appendChild(btn);
+    document.getElementById(`card${wonder}`).appendChild(btn);
     btn.addEventListener("click", function () {
       loadWonders(wonder, data);
     });
@@ -63,5 +75,3 @@ function createWonder(data) {
   loadImages(data);
   console.log(data);
 }
-
-

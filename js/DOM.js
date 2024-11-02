@@ -3,7 +3,14 @@ function createImage(image, id) {
   img.setAttribute("src", image);
   document.getElementById(id).appendChild(img);
 }
-
+function loadImages(data) {
+  const images = data.links.images;
+  const size = images.length;
+  for (let i = 1; i < size; i++) {
+    createImage(images[i], "images");
+  }
+}
+//elements of index.html
 function createElements(data) {
   for (let wonder in data) {
     createImage(data[wonder].links.images[0], "wonders");
@@ -23,6 +30,7 @@ function createElements(data) {
   }
 }
 
+// elements of wonder.html
 function createWonder(data) {
   let name = document.getElementById("name");
   let summary = document.getElementById("summary");
@@ -57,10 +65,3 @@ function createWonder(data) {
 }
 
 
-function loadImages(data) {
-  const images = data.links.images;
-  const size = images.length;
-  for (let i = 1; i < size; i++) {
-    createImage(images[i], "images");
-  }
-}

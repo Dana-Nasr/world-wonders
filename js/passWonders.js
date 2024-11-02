@@ -7,8 +7,8 @@ function loadWonders(index, data) {
 }
 
 function createWonderDiv() {
-  let wonderData = JSON.parse(localStorage.getItem("data"));
-  console.log(typeof wonderData); //parse to json
+  let wonderData = JSON.parse(localStorage.getItem("data")); //parse to json
+  console.log(typeof wonderData);
 
   return wonderData;
 }

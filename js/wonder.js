@@ -1,7 +1,8 @@
 function createWonderDiv() {
-  let wonderData = localStorage.getItem("data");
   let h2 = document.createElement("h2");
-  h2.innerText = wonderData;
+  let wonderData = JSON.parse(localStorage.getItem("data"));
+  console.log(typeof wonderData);
+  h2.innerText = wonderData.name;
   document.getElementById("wonder").appendChild(h2);
 }
 

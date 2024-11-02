@@ -15,10 +15,10 @@ function createElements(data) {
   for (let wonder in data) {
     //card
     let card = document.createElement("div");
-    card.setAttribute("class", "card");
+    card.setAttribute("class", "card flex column center");
     card.setAttribute("id", `card${wonder}`);
     document.getElementById("wonders").appendChild(card);
-    
+
     //image div
     let imgDiv = document.createElement("div");
     imgDiv.setAttribute("class", "divImg");
@@ -35,6 +35,7 @@ function createElements(data) {
     let btn = document.createElement("button");
     btn.innerText = "view more";
     btn.setAttribute("id", wonder);
+    btn.setAttribute("class", "btn");
     document.getElementById(`card${wonder}`).appendChild(btn);
     btn.addEventListener("click", function () {
       loadWonders(wonder, data);
